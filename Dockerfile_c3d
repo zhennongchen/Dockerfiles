@@ -1,0 +1,17 @@
+FROM kunalg106/cuda100
+
+RUN useradd -m -p c3dpwd -g sudo c3duser
+
+RUN wget -P /home/c3duser 'https://sourceforge.net/projects/c3d/files/c3d/Nightly/c3d-nightly-Linux-gcc64.tar.gz'
+RUN cd /home/c3duser/ && \
+    tar -xf /home/c3duser/c3d-nightly-Linux-gcc64.tar.gz
+RUN cp -a home/c3duser/c3d-1.1.0-Linux-gcc64/bin/. /usr/local/bin
+
+RUN pip install nibabel && \
+    pip install pandas
+
+# USER c3duser
+# WORKDIR /home/c3duser
+
+# ADD *.py /home/c3duser/
+

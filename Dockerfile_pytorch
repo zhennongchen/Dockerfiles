@@ -1,0 +1,13 @@
+FROM kunalg106/pytorch
+
+
+RUN conda install -c conda-forge nibabel
+RUN conda install -c conda-forge xlsxwriter
+RUN pip install opencv-python
+RUN pip install git+https://github.com/zhennongchen/dvpy.git#egg=dvpy
+
+
+
+
+
+
