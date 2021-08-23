@@ -1,11 +1,12 @@
 FROM kunalg106/cuda100
 
-RUN useradd -m -p c3dpwd -g sudo c3duser
 
-RUN wget -P /home/c3duser 'https://sourceforge.net/projects/c3d/files/c3d/Nightly/c3d-nightly-Linux-gcc64.tar.gz'
-RUN cd /home/c3duser/ && \
-    tar -xf /home/c3duser/c3d-nightly-Linux-gcc64.tar.gz
-RUN cp -a home/c3duser/c3d-1.1.0-Linux-gcc64/bin/. /usr/local/bin
+#RUN useradd -m -p c3dpwd -g sudo c3duser
+
+#RUN wget -P /home/c3duser 'https://sourceforge.net/projects/c3d/files/c3d/Nightly/c3d-#nightly-Linux-gcc64.tar.gz'
+#RUN cd /home/c3duser/ && \
+#    tar -xf /home/c3duser/c3d-nightly-Linux-gcc64.tar.gz
+#RUN cp -a home/c3duser/c3d-1.1.0-Linux-gcc64/bin/. /usr/local/bin
 
 RUN pip install nibabel && \
     pip install pandas
@@ -20,8 +21,8 @@ RUN sudo dpkg -i  libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3_amd64.deb
 
 RUN pip install tensorflow-gpu==1.14.0
 RUN pip install keras==2.2.4
-RUN pip install opencv-python
-
+RUN pip install opencv-python==4.2.0.32
+# RUN conda install -c conda-forge opencv
 RUN conda install -c conda-forge scikit-image
 RUN conda install -c conda-forge tqdm
 
