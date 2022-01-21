@@ -23,6 +23,7 @@ RUN pip uninstall h5py -y whatever
 RUN pip install h5py==2.10.0
 RUN conda install -c conda-forge scikit-image
 RUN pip install sklearn
+RUN pip install xlrd==1.2.0
 
 RUN wget http://mirrors.kernel.org/ubuntu/pool/main/b/boost1.58/libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3_amd64.deb
 RUN sudo dpkg -i  libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3_amd64.deb
