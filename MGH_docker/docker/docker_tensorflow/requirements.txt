@@ -12,7 +12,8 @@ opencv-python
 sklearn
 flake8==3.9.2
 SimpleITK==2.1.1
-scikit-image==0.16.2
+# scikit-image==0.16.2
+scikit-image==0.19.2
 pydicom==1.4.2
 python-gdcm==3.0.10
 pandas==1.0.3

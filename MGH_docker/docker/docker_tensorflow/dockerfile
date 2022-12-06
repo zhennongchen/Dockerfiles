@@ -25,11 +25,11 @@ RUN python3 -m pip install --no-cache-dir -r /env/requirements.txt
 RUN python3 -m pip install git+https://github.com/zhennongchen/CTProjector.git
 
 # c3d 
-# RUN useradd -m -p c3dpwd -g sudo c3duser
-# RUN wget 'https://sourceforge.net/projects/c3d/files/c3d/Nightly/c3d-nightly-Linux-gcc64.tar.gz'
-# RUN tar -xf c3d-nightly-Linux-gcc64.tar.gz
-# RUN pwd
-# RUN cp -a /c3d-1.4.0-Linux-gcc64/bin/. /usr/local/bin
+RUN useradd -m -p c3dpwd -g sudo c3duser
+RUN wget 'https://sourceforge.net/projects/c3d/files/c3d/Nightly/c3d-nightly-Linux-gcc64.tar.gz'
+RUN tar -xf c3d-nightly-Linux-gcc64.tar.gz
+RUN pwd
+RUN cp -a /c3d-1.4.0-Linux-gcc64/bin/. /usr/local/bin
 
 COPY entrypoint.sh /env/entrypoint.sh
 RUN chmod +x /env/entrypoint.sh
