@@ -17,9 +17,9 @@ CONTAINER_DATADIR="/mnt/mount_zc_NAS" #should be /mnt/data when using NAS drive
 sudo docker run -it --runtime=nvidia --name=docker_ex --network="bridge" \
 -v ${HOST_WORK_DIR}:${CONTAINER_WORKDIR} \
 -v ${HOST_DATA_DIR}:${CONTAINER_DATADIR} \
--p 8110:8110 \
+-p 8120:8120 \
 -e CONTAINER_UID=${HOST_USER_ID} \
 -e CONTAINER_GID=${HOST_GROUP_ID} \
 -e CONTAINER_UNAME=${HOST_USER_NAME} \
 -e CONTAINER_WORKDIR=${CONTAINER_WORKDIR} \
-zc_pytorch:1.0
+zc_pytorch:2.0
